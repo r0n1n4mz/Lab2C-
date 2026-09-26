@@ -1,18 +1,28 @@
 #pragma once
 #include <string>
+#include <vector>
+
+struct phoneData{
+    std::string firstName;
+    std::string lastName;
+    std::string phoneNumber;
+};
 
 class PhoneBooks{
     private:
-        std::string fisrtName;
-        std::string lastName;
-        std::string phoneNumber;
+        std::vector<phoneData> numberList;
+
     public:
         //Constructor
-        PhoneBooks(std::string firstName, std::string lastName, std::string phone);
+        PhoneBooks();
 
-        std::string getFirstName();
-        std::string getLastName();
-        std::string getPhoneNumber();
+        void addNumber(const std::string& firstName, const std::string& lastName, const std::string& phoneNumber);
+        void deleteNumber(const int id);
+        void showAll();
+        
 
 
-}
+        
+
+
+};
