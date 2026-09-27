@@ -5,8 +5,8 @@
 
 PhoneBooks::PhoneBooks() {}
 
-void PhoneBooks::addNumber(const std::string& firstName, const std::string& lastName, const std::string& phoneNumber){
-    numberList.push_back({firstName, lastName, phoneNumber});
+void PhoneBooks::addNumber(const std::string& name, const std::string& phoneNumber){
+    numberList.push_back({name, phoneNumber});
 }
 
 void PhoneBooks::deleteNumber(const int id){
