@@ -19,7 +19,8 @@ class PhoneBooks{
         void deleteNumber(const int id);
         void showAll();
         
-
+        std::string getName(int id);
+        std::string getNumber(int id);
 
         
 

@@ -6,6 +6,7 @@ class Balance{
         std::string val;
     public:
         //Constructor
+        Balance();
         Balance(std::string val);
 
         //Manage with viriable

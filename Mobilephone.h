@@ -13,15 +13,13 @@ class Mobilephone{
     int tariff;
   public:
     Mobilephone();
-    Mobilephone(std::string& model, Sim simCard, PhoneBooks phoneBook, Balance account);
+    Mobilephone(const std::string& model, Sim simCard, PhoneBooks phoneBook, Balance account, int tariff);
 
-    void call(std::string number, int tariff, Balance account);
-    void addFunds(Balance account, int tariff);
-    void managePhonebook(PhoneBooks phoneBook, int id);
+    void call(int target);
+    void addFunds(int sum);
+    void managePhonebook(int id);
     void showInfo(std::string txt);
 
-    std::string getBalance(Balance account);
-    std::string getNumber(PhoneBooks phoneBook);
-    
-    
+    std::string getBalance();
+      
 };

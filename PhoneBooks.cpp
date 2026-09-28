@@ -19,7 +19,17 @@ void PhoneBooks::deleteNumber(const int id){
 
 void PhoneBooks::showAll(){
     std::cout<<"№"<<"\t Name \t\t\t number\n";
+    int idx = 0;
     for(auto& i:numberList){
-        std::cout<<i.firstName<<"\t"<<i.lastName<<"\t"<<i.phoneNumber<<std::endl;
+        std::cout<< idx <<"\t"<<i.name<<"\t"<<i.phoneNumber<<std::endl;
+        idx++;
     }
+}
+
+std::string PhoneBooks::getName(int id){
+  return numberList[id].name;
+}
+
+std::string PhoneBooks::getNumber(int id){
+  return numberList[id].phoneNumber;
 }
