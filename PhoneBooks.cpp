@@ -10,8 +10,8 @@ void PhoneBooks::addNumber(const std::string& name, const std::string& phoneNumb
 }
 
 void PhoneBooks::deleteNumber(const int id){
-    if(id < numberList.size() && id <0){
-        numberList.erase(std::find(numberList.begin(), numberList.end(), id));
+    if(id >= 0 && id < static_cast<int>(numberList.size())){
+        numberList.erase(numberList.begin() + id);
     }else{
         std::cout<< "Please write down id from 0 to +infinity"<<std::endl;
     }

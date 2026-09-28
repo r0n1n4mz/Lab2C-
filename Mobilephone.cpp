@@ -13,18 +13,19 @@ Mobilephone::Mobilephone(const std::string& model, Sim simCard, PhoneBooks phone
 void Mobilephone::call(int target){
   if((std::stoi(this->account.getVal()) - this->tariff) >= 0){
     std::cout<<this->phoneBook.getName(target)<<"\n"<<this->phoneBook.getNumber(target)<<"\n"<<"Calling\n";
-    int res = std::stoi(this->account.getVal()) - this->tariff;
-    this->account.changeVal(std::to_string(res));
-    bool status = 1;
-    while(status != 0){
-      int time = 0;
+    bool status = true;
+    int time = 0;
+    while(status){
+      std::cout<<"0:"<<time<<std::endl;
       time++;
-      if(time == 30){
-        status = 0;
+      if(time == 60){
+        status = false;
       }
     }
+    int res = std::stoi(this->account.getVal()) - this->tariff;
+    this->account.changeVal(std::to_string(res));
   }else{
-    std::cout<<"Plese fund up your account to call someone\n";
+    std::cout<<"Please fund up your account to call someone\n";
   }
 }
 
@@ -52,11 +53,11 @@ void Mobilephone::managePhonebook(int idx){
     case 3: {
       //delete number
       int id;
-      std::cout<<"Enter id of target number: ";
+      std::cout<<"Enter id of target number to delete: ";
       std::cin>>id;
       std::cout<<"\nDeleting number...\n";
       this->phoneBook.deleteNumber(id);
-      std::cout<<"Number succeful deleted\n";
+      std::cout<<"Number successful deleted\n";
       break;
     }
     default:{

@@ -1,9 +1,13 @@
 #include "Mobilephone.h"
 #include<iostream>
-
+#include"Balance.h"
 int main(){
-  Mobilephone phone1("Apple iphone 15", Sim("+380637782882", "2832", "Lifecell"), PhoneBooks(), Balance("0"), 5);
-
+  std::string number =  "+380637782882";
+  std::string pincode = "2832";
+  std::string operator1 = "Lifecell";
+  Sim sda = Sim(number, pincode, operator1);
+  Mobilephone phone1 = Mobilephone("Apple iphone 15", sda, PhoneBooks(), Balance("0"), 5);
+ 
   std::cout<<"The current balance: "<<phone1.getBalance()<<std::endl;
   std::cout<<"increase value of my account\n";
   phone1.addFunds(100);
