@@ -8,12 +8,12 @@ class Sim{
     std::string operatorName;
   public:
     Sim();
-    Sim(std::string& phoneNumber, std::string& pinCode, std::string& operatorName);
+    Sim(std::string phoneNumber, std::string pinCode, std::string operatorName);
 
-    void changePincode(std::string& pinCode);
+    void changePincode(std::string pinCode);
 
     std::string getPincode();
-    std::string getOperatorname();
     std::string getPhonenumber();
+    std::string getOperatorname();
 };
 

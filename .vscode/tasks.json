@@ -10,7 +10,7 @@
                 "${workspaceFolder}/main.cpp",
                 "${workspaceFolder}/Balance.cpp",
                 "${workspaceFolder}/Mobilephone.cpp",
-                "${workspaceFolder}/PhoneBooks.cpp",
+                "${workspaceFolder}/PhoneBook.cpp",
                 "${workspaceFolder}/Sim.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"

@@ -1,17 +1,16 @@
 #include"Balance.h"
-#include<string>
 
 Balance::Balance(){
-    this->val = "0";
+    this->val = 0;
 }
-Balance::Balance(std::string val){
+Balance::Balance(int val){
     this->val = val;
 }
 
-std::string Balance::getVal(){
+int Balance::getVal(){
     return this->val;
 }
 
-void Balance::changeVal(std::string val){
+void Balance::changeVal(int val){
     this->val = val;
 }

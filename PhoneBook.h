@@ -7,16 +7,16 @@ struct phoneData{
     std::string phoneNumber;
 };
 
-class PhoneBooks{
+class PhoneBook{
     private:
         std::vector<phoneData> numberList;
 
     public:
         //Constructor
-        PhoneBooks();
+        PhoneBook();
 
         void addNumber(const std::string& name, const std::string& phoneNumber);
-        void deleteNumber(const int id);
+        bool deleteNumber(const int phoneIndex);
         void showAll();
         
         std::string getName(int id);

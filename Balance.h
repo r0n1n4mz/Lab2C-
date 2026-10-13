@@ -1,17 +1,16 @@
 #pragma once
-#include<string>
 
 class Balance{
     private:
-        std::string val;
+        int val;
     public:
         //Constructor
         Balance();
-        Balance(std::string val);
+        Balance(int val);
 
         //Manage with viriable
-        std::string getVal();
-        void changeVal(std::string val);
+        int getVal();
+        void changeVal(int val);
 
 };
 

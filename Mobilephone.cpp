@@ -2,7 +2,7 @@
 #include <iostream>
 
 Mobilephone::Mobilephone(){}
-Mobilephone::Mobilephone(const std::string& model, Sim simCard, PhoneBooks phoneBook, Balance account, int tariff){
+Mobilephone::Mobilephone(const std::string& model, Sim simCard, PhoneBook phoneBook, Balance account, int tariff){
   this->model = model;
   this->simCard = simCard;
   this->phoneBook = phoneBook;
@@ -11,7 +11,7 @@ Mobilephone::Mobilephone(const std::string& model, Sim simCard, PhoneBooks phone
 }
 
 void Mobilephone::call(int target){
-  if((std::stoi(this->account.getVal()) - this->tariff) >= 0){
+  if((this->account.getVal() - this->tariff) >= 0){
     std::cout<<this->phoneBook.getName(target)<<"\n"<<this->phoneBook.getNumber(target)<<"\n"<<"Calling\n";
     bool status = true;
     int time = 0;
@@ -22,16 +22,16 @@ void Mobilephone::call(int target){
         status = false;
       }
     }
-    int res = std::stoi(this->account.getVal()) - this->tariff;
-    this->account.changeVal(std::to_string(res));
+    int res = this->account.getVal() - this->tariff;
+    this->account.changeVal(res);
   }else{
     std::cout<<"Please fund up your account to call someone\n";
   }
 }
 
 void Mobilephone::addFunds(int sum){
-  int res = std::stoi(this->account.getVal()) + sum;
-  this->account.changeVal(std::to_string(res));
+  int res = this->account.getVal() + sum;
+  this->account.changeVal(res);
 };
 void Mobilephone::managePhonebook(int idx){
   //id -- it's number of action you want to do
@@ -42,7 +42,8 @@ void Mobilephone::managePhonebook(int idx){
       break;
     case 2: {
       //add number in phoneBook;
-      std::string name, numb;
+      std::string name;
+      std::string numb;
       std::cout<<"Enter the name for contact: ";
       std::cin>>name;
       std::cout<<"Enter the number for contact: ";
@@ -71,6 +72,6 @@ void Mobilephone::showInfo(std::string txt){
   std::cout<<txt<<std::endl;
 }
 
-std::string Mobilephone::getBalance(){
+int Mobilephone::getBalance(){
   return this->account.getVal();
 }
